@@ -5,7 +5,7 @@
 [![Validate skills](https://github.com/sriwitsumo/project-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/sriwitsumo/project-skill/actions/workflows/validate.yml)
 [![GitHub issues](https://img.shields.io/github/issues/sriwitsumo/project-skill)](https://github.com/sriwitsumo/project-skill/issues)
 
-> ชุด Claude Skills สำหรับงานเขียนภาษาไทยเชิงวิชาการ หนังสือราชการ และโครงงานวิจัย
+> ชุด Agent Skills ภาษาไทยสำหรับ Claude, ChatGPT Work และ Codex — งานวิชาการ หนังสือราชการ และโครงงานวิจัย
 
 ออกแบบเพื่อผู้เรียน ผู้สอน และผู้ทำงานภาษาไทยโดยเฉพาะ — ตั้งแต่เก็บโจทย์โครงงาน เขียนบทที่ 1–3 จัดรายการอ้างอิง ไปจนถึงจัดบรรทัด Word ให้สวยและถูกต้อง
 
@@ -18,12 +18,20 @@
 - **รับผิดชอบต่อผู้ใช้:** เน้นการตรวจสอบแหล่งข้อมูล ความถูกต้อง และความเป็นเจ้าของงาน
 - **พัฒนาร่วมกันได้:** เปิดรับข้อเสนอ การแก้ไข และสกิลใหม่จากชุมชน
 
-## เริ่มต้นใน 2 นาที
+## ใช้ได้กับ Claude Free, ChatGPT Work และ Codex
+
+- **Claude Free / Pro / Max (chat, web, desktop, mobile):** อัปโหลดสกิลเป็น ZIP ที่ `Customize → Skills` หลังเปิด `Code execution and file creation`
+- **ChatGPT Work (รวมถึง ChatGPT chat ที่ติดตั้ง plugin):** รีโปนี้เป็น plugin ที่มี manifest และ 7 สกิลพร้อมติดตั้ง
+- **Claude Code / Codex:** ติดตั้งจากโฟลเดอร์ `skills/` บนเครื่องหรือในรีโปของคุณ
+
+ดูคู่มือแยกตามแพลตฟอร์มที่ [เว็บไซต์คู่มือ](https://project-skill-site.vercel.app/installation.html)
+
+## เริ่มต้นใน 2 นาที — Claude Code
 
 ```bash
 git clone https://github.com/sriwitsumo/project-skill.git
 mkdir -p ~/.claude/skills
-cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
+cp -R project-skill/skills/thai-project-chapter1 ~/.claude/skills/
 ```
 
 จากนั้นเปิด Claude Code แล้วลอง: `ช่วยเขียนบทที่ 1 โครงงานให้หน่อย`
@@ -106,18 +114,16 @@ cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
 
 ## ความเข้ากันได้
 
-ทุกสกิลเป็นไฟล์ Markdown ตามมาตรฐาน Claude Skill (`SKILL.md` ± `reference/` ± `agents/`) ใช้ได้กับทุก platform ที่รองรับรูปแบบนี้
+ทุกสกิลเป็นไฟล์ Markdown ตามมาตรฐาน Agent Skills (`SKILL.md` พร้อม `reference/` และ `agents/` เมื่อจำเป็น) รีโปนี้มี plugin manifest เพื่อใช้กับ ChatGPT Work ด้วย
 
-| Platform | รองรับ SKILL.md | หมายเหตุ |
+| Platform | ใช้ได้ | วิธี |
 |---|---|---|
-| **Claude Code** (CLI) | ✅ | macOS · Linux · Windows (WSL2) |
-| **Claude Desktop App** (Code tab) | ✅ | macOS · Windows |
-| **Claude Cowork** | ✅ | วางในโฟลเดอร์ skills ของ workspace |
-| Claude mobile (iOS/Android) | ❌ | chat interface เท่านั้น ไม่มีระบบ skill |
-| ChatGPT / GPT-4o (OpenAI) | ❌ | ใช้รูปแบบ Custom GPT ของตัวเอง |
-| Gemini (Google) | ❌ | ใช้รูปแบบ Gem ของตัวเอง |
-| Microsoft Copilot | ❌ | ไม่รองรับ SKILL.md |
-| Perplexity / อื่น ๆ | ❌ | ไม่รองรับ SKILL.md |
+| **Claude Free / Pro / Max** | ✅ | เปิด Code execution แล้วอัปโหลด ZIP ที่ `Customize → Skills` |
+| **Claude chat** (web, desktop, mobile) | ✅ | ใช้สกิลที่เปิดไว้ใน `Customize → Skills` |
+| **Claude Code / Cowork** | ✅ | ใช้โฟลเดอร์ใน `skills/` หรือ plugin นี้ |
+| **ChatGPT Work** | ✅ | ติดตั้ง plugin `project-skill` ซึ่งรวม 7 สกิล |
+| **ChatGPT chat** | ✅ | ใช้ plugin เดียวกันหลังติดตั้งใน ChatGPT |
+| Gemini / Copilot / Perplexity | ไม่ได้ทดสอบ | ไม่มีคู่มือติดตั้งสำหรับโปรเจกต์นี้ |
 
 **Claude model:** ทุก version ที่รองรับ Claude Skills (Haiku, Sonnet, Opus) — สกิลที่ใช้ WebSearch (`chapter2`, `references`) แนะนำ Sonnet ขึ้นไป
 
@@ -160,10 +166,13 @@ cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
 
 ## การติดตั้ง
 
-### ข้อกำหนดเบื้องต้น
+### เลือกวิธีให้ตรงกับแอปที่ใช้
 
-- [Claude Code](https://claude.ai/code) หรือ Claude Desktop App ติดตั้งและล็อกอินแล้ว
-- Git 2.x+ (`git --version` เพื่อตรวจสอบ)
+1. **Claude Free / Pro / Max:** ไม่ต้องติดตั้ง Terminal — ดาวน์โหลดหรือ clone รีโป แล้ว ZIP โฟลเดอร์สกิลที่ต้องการเพื่ออัปโหลดใน Claude chat
+2. **ChatGPT Work / ChatGPT chat:** ใช้ plugin ในรีโปนี้ ซึ่งรวมสกิลทั้งหมดไว้ใต้ `skills/`
+3. **Claude Code / Codex:** ใช้คำสั่ง Terminal ด้านล่าง
+
+> ใช้ใน Claude Free ได้: ไปที่ `Settings → Capabilities` เปิด **Code execution and file creation** จากนั้น `Customize → Skills → + Create skill → Upload a skill` แล้วเลือก ZIP ที่มีโฟลเดอร์สกิลและ `SKILL.md` อยู่ข้างใน
 
 ---
 
@@ -180,13 +189,13 @@ cd project-skill
 mkdir -p ~/.claude/skills
 
 # 3. ติดตั้งสกิลที่ต้องการ (หรือติดตั้งทั้งหมดพร้อมกัน)
-cp -R thai-official-academic-writing ~/.claude/skills/
-cp -R thai-project-references        ~/.claude/skills/
-cp -R thai-word-line-fit             ~/.claude/skills/
-cp -R thai-project-intake            ~/.claude/skills/
-cp -R thai-project-chapter1          ~/.claude/skills/
-cp -R thai-project-chapter2          ~/.claude/skills/
-cp -R thai-project-chapter3          ~/.claude/skills/
+cp -R skills/thai-official-academic-writing ~/.claude/skills/
+cp -R skills/thai-project-references        ~/.claude/skills/
+cp -R skills/thai-word-line-fit             ~/.claude/skills/
+cp -R skills/thai-project-intake            ~/.claude/skills/
+cp -R skills/thai-project-chapter1          ~/.claude/skills/
+cp -R skills/thai-project-chapter2          ~/.claude/skills/
+cp -R skills/thai-project-chapter3          ~/.claude/skills/
 
 # 4. ตรวจสอบ
 ls ~/.claude/skills/
@@ -201,11 +210,24 @@ ls ~/.claude/skills/
 ```bash
 # ภายในโฟลเดอร์ project ของคุณ
 mkdir -p .claude/skills
-cp -R thai-project-chapter1 .claude/skills/
+cp -R skills/thai-project-chapter1 .claude/skills/
 # เพิ่มสกิลอื่น ๆ ได้ตามต้องการ
 ```
 
 ---
+
+### วิธีที่ 3 — Claude Free / Claude chat
+
+1. ดาวน์โหลด repo เป็น ZIP จาก GitHub แล้วแตกไฟล์
+2. เปิดโฟลเดอร์ `skills/` และบีบอัด **ทีละโฟลเดอร์** ที่จะใช้ เช่น `thai-project-chapter1/` เป็น `thai-project-chapter1.zip`
+3. ใน Claude: `Customize → Skills → + Create skill → Upload a skill`
+4. เลือก ZIP แล้วเปิดใช้งานสกิลนั้นในรายการ Skills
+
+หากใช้ Terminal ให้สร้าง ZIP ทั้ง 7 สกิลพร้อมกันด้วย `bash scripts/package-claude-skills.sh` แล้วเลือกไฟล์จาก `dist/claude-skills/`
+
+### วิธีที่ 4 — ChatGPT Work / ChatGPT chat
+
+รีโปนี้จัดเป็น plugin แล้ว: `.codex-plugin/plugin.json` อ้างถึง `skills/` ทั้ง 7 สกิล สร้าง plugin archive ด้วย `bash scripts/package-plugin.sh` แล้วเพิ่ม `dist/project-skill-plugin.zip` ผ่านหน้า Customize/Plugins ของ ChatGPT Work ตามสิทธิ์ของ workspace จากนั้นเปิด plugin `project-skill` ก่อนเริ่มแชตใหม่
 
 ### Claude Cowork
 
@@ -228,7 +250,7 @@ cp -R thai-project-chapter1 .claude/skills/
 ```bash
 cd project-skill
 git pull
-cp -R thai-project-chapter1 ~/.claude/skills/
+cp -R skills/thai-project-chapter1 ~/.claude/skills/
 # ทำซ้ำสำหรับสกิลอื่น ๆ ที่ติดตั้งไว้
 ```
 
@@ -248,15 +270,18 @@ cp -R thai-project-chapter1 ~/.claude/skills/
 project-skill/
 ├── README.md
 ├── .gitignore
-├── thai-official-academic-writing/
+├── .codex-plugin/
+│   └── plugin.json
+├── skills/
+│   ├── thai-official-academic-writing/
 │   └── SKILL.md
-├── thai-project-references/
+├── skills/thai-project-references/
 │   └── SKILL.md
-├── thai-word-line-fit/
+├── skills/thai-word-line-fit/
 │   └── SKILL.md
-├── thai-project-intake/
+├── skills/thai-project-intake/
 │   └── SKILL.md
-├── thai-project-chapter1/
+├── skills/thai-project-chapter1/
 │   ├── SKILL.md
 │   ├── README.md
 │   └── reference/
@@ -269,7 +294,7 @@ project-skill/
 │       ├── 07-phasa-wichakan.md
 │       ├── 08-pongkan-wangwon.md
 │       └── 09-tuapae.md
-├── thai-project-chapter2/
+├── skills/thai-project-chapter2/
 │   ├── SKILL.md
 │   ├── README.md
 │   ├── agents/
@@ -280,10 +305,10 @@ project-skill/
 │       ├── 03-citation-style.md
 │       ├── 04-synthesis-and-framework.md
 │       └── 05-content-ownership-and-quality.md
-├── thai-project-chapter3/
+├── skills/thai-project-chapter3/
 │   ├── SKILL.md
 │   └── README.md
-└── thai-project-intake/
+└── skills/thai-project-intake/
     ├── SKILL.md
     └── README.md
 ```

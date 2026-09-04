@@ -1,0 +1,29 @@
+{
+  "name": "project-skill",
+  "version": "1.0.0",
+  "description": "Thai-language skills for research projects, academic writing, APA references, and Word documents.",
+  "author": {
+    "name": "Sriwit Rujirawatanakul",
+    "url": "https://github.com/sriwitsumo"
+  },
+  "homepage": "https://project-skill-site.vercel.app/",
+  "repository": "https://github.com/sriwitsumo/project-skill",
+  "license": "MIT",
+  "keywords": ["thai", "academic-writing", "research-project", "claude-skills", "chatgpt-work"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "project-skill",
+    "shortDescription": "สกิลภาษาไทยสำหรับโครงงานและงานวิชาการ",
+    "longDescription": "7 สกิลภาษาไทยสำหรับเก็บข้อมูลโครงงาน เขียนบทที่ 1–3 จัดอ้างอิง APA หนังสือราชการ และจัดเอกสาร Word",
+    "developerName": "Sriwit Rujirawatanakul",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "websiteURL": "https://project-skill-site.vercel.app/",
+    "defaultPrompt": [
+      "ช่วยเริ่มเก็บข้อมูลสำหรับโครงงานของฉัน",
+      "ช่วยเขียนบทที่ 1 ของโครงงานภาษาไทย",
+      "ช่วยตรวจรายการอ้างอิงแบบ APA ภาษาไทย"
+    ],
+    "brandColor": "#066dcc"
+  }
+}

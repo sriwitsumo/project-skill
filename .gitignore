@@ -35,3 +35,4 @@ node_modules/
 # Scratch files
 _probe.txt
 _b.txt
+dist/

@@ -19,7 +19,7 @@ jobs:
         run: |
           set -euo pipefail
           skill_count=0
-          for directory in thai-*/; do
+          for directory in skills/thai-*/; do
             test -d "$directory" || continue
             test -f "${directory}SKILL.md"
             skill_count=$((skill_count + 1))
@@ -30,4 +30,5 @@ jobs:
           test -f CODE_OF_CONDUCT.md
           test -f SECURITY.md
           test -f CITATION.cff
+          test -f .codex-plugin/plugin.json
           echo "Validated $skill_count skills and community files."

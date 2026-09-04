@@ -150,7 +150,9 @@ cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
 
 คำค้นที่เกี่ยวข้อง: **Thai academic writing, Claude Skills, Thai research project, APA 7 Thai, official correspondence, Thai Word typography, โครงงานวิจัย, หนังสือราชการ, บทที่ 1–3, รายการอ้างอิง**
 
-หากชุดสกิลนี้มีประโยชน์ ช่วยกด Star, แชร์ตัวอย่างการใช้งานที่ตรวจสอบแล้ว หรือเสนอไอเดียใน [Discussions](https://github.com/sriwitsumo/project-skill/discussions) — สิ่งเหล่านี้ช่วยให้ผู้เรียนและผู้สอนภาษาไทยค้นพบโปรเจกต์ได้มากขึ้น
+ถ้าชุดสกิลนี้ช่วยคุณได้ **ช่วยกด ⭐ Star ให้หน่อยนะครับ** — หนึ่งดาวของคุณช่วยให้ผู้เรียนและผู้สอนภาษาไทยค้นพบโปรเจกต์นี้มากขึ้นจริง ๆ
+
+คุณยังช่วยได้ด้วยการแชร์ตัวอย่างการใช้งานที่ตรวจสอบแล้ว หรือเสนอไอเดียใน [Discussions](https://github.com/sriwitsumo/project-skill/discussions)
 
 ---
 

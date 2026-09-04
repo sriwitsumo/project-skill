@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
+[![Validate skills](https://github.com/sriwitsumo/project-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/sriwitsumo/project-skill/actions/workflows/validate.yml)
 [![GitHub issues](https://img.shields.io/github/issues/sriwitsumo/project-skill)](https://github.com/sriwitsumo/project-skill/issues)
 
 > Thai-first Claude Skills for academic writing, research projects, official correspondence, and Word document typography.
@@ -26,7 +27,9 @@ cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
 
 จากนั้นเปิด Claude Code แล้วลอง: `ช่วยเขียนบทที่ 1 โครงงานให้หน่อย`
 
-![ติดตั้ง project-skill ใน 3 ขั้นตอน](assets/install-claude-code.svg)
+<p align="center">
+  <img src="assets/install-terminal.gif" alt="Terminal animation showing how to install project-skill in Claude Code" width="760">
+</p>
 
 ## เหมาะกับใคร / Use cases
 

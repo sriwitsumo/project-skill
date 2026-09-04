@@ -5,19 +5,18 @@
 [![Validate skills](https://github.com/sriwitsumo/project-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/sriwitsumo/project-skill/actions/workflows/validate.yml)
 [![GitHub issues](https://img.shields.io/github/issues/sriwitsumo/project-skill)](https://github.com/sriwitsumo/project-skill/issues)
 
-> Thai-first Claude Skills for academic writing, research projects, official correspondence, and Word document typography.
+> ชุด Claude Skills สำหรับงานเขียนภาษาไทยเชิงวิชาการ หนังสือราชการ และโครงงานวิจัย
 
-ชุด Claude Skills สำหรับงานเขียนภาษาไทยเชิงวิชาการ งานเอกสารราชการ และโครงงานวิจัย  
-A collection of Claude Skills for Thai academic writing, official correspondence, research projects, and Word document typography.
+ออกแบบเพื่อผู้เรียน ผู้สอน และผู้ทำงานภาษาไทยโดยเฉพาะ — ตั้งแต่เก็บโจทย์โครงงาน เขียนบทที่ 1–3 จัดรายการอ้างอิง ไปจนถึงจัดบรรทัด Word ให้สวยและถูกต้อง
 
-## จุดเด่น / Why project-skill
+## จุดเด่น
 
-- **Thai-first:** ออกแบบสำหรับรูปแบบภาษาไทย งานวิชาการ และบริบทการศึกษาไทย
-- **Practical:** ใช้ได้ตั้งแต่รวบรวมโจทย์โครงงาน ไปจนถึงบทที่ 1–3 และรายการอ้างอิง
-- **Responsible by default:** เน้นการตรวจสอบแหล่งข้อมูล ความถูกต้อง และความเป็นเจ้าของงาน
-- **Open to improve:** รับข้อเสนอ แก้ไข และสกิลใหม่จากชุมชน
+- **ออกแบบเพื่อภาษาไทย:** ใช้รูปแบบภาษาไทย งานวิชาการ และบริบทการศึกษาไทยเป็นแกนหลัก
+- **ใช้ได้จริง:** ครอบคลุมตั้งแต่รวบรวมโจทย์โครงงาน ไปจนถึงบทที่ 1–3 และรายการอ้างอิง
+- **รับผิดชอบต่อผู้ใช้:** เน้นการตรวจสอบแหล่งข้อมูล ความถูกต้อง และความเป็นเจ้าของงาน
+- **พัฒนาร่วมกันได้:** เปิดรับข้อเสนอ การแก้ไข และสกิลใหม่จากชุมชน
 
-## เริ่มต้นใน 2 นาที / Quick start
+## เริ่มต้นใน 2 นาที
 
 ```bash
 git clone https://github.com/sriwitsumo/project-skill.git
@@ -28,10 +27,10 @@ cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
 จากนั้นเปิด Claude Code แล้วลอง: `ช่วยเขียนบทที่ 1 โครงงานให้หน่อย`
 
 <p align="center">
-  <img src="assets/install-terminal.gif" alt="Terminal animation showing how to install project-skill in Claude Code" width="760">
+  <img src="assets/install-terminal.gif" alt="GIF แสดงคำสั่งติดตั้ง project-skill ผ่าน Terminal" width="760">
 </p>
 
-## เหมาะกับใคร / Use cases
+## เหมาะกับใคร
 
 | คุณต้องการ… | เริ่มที่สกิล |
 | --- | --- |
@@ -45,7 +44,7 @@ cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
 
 ---
 
-## สกิลในรีโปนี้ / Skills in this repo
+## สกิลในรีโปนี้
 
 ### 1. `thai-official-academic-writing`
 
@@ -103,7 +102,7 @@ cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
 
 ---
 
-## ความเข้ากันได้ / Compatibility
+## ความเข้ากันได้
 
 ทุกสกิลเป็นไฟล์ Markdown ตามมาตรฐาน Claude Skill (`SKILL.md` ± `reference/` ± `agents/`) ใช้ได้กับทุก platform ที่รองรับรูปแบบนี้
 
@@ -135,19 +134,19 @@ cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
 
 ---
 
-## ร่วมพัฒนา / Contributing
+## ร่วมพัฒนา
 
 ยินดีต้อนรับทุก contribution — ตั้งแต่การแก้คำอธิบาย เพิ่มตัวอย่าง ไปจนถึงสกิลใหม่ โปรดอ่าน [CONTRIBUTING.md](CONTRIBUTING.md) ก่อนเปิด pull request และใช้ [Issues](https://github.com/sriwitsumo/project-skill/issues) สำหรับ bug/feature requests หรือ [Discussions](https://github.com/sriwitsumo/project-skill/discussions) สำหรับคำถามและไอเดีย
 
-## License
+## ใบอนุญาต
 
 เผยแพร่ภายใต้ [MIT License](LICENSE) © 2026 Sriwit Rujirawatanakul
 
-## Citation
+## การอ้างอิง
 
 หากนำไปใช้ในผลงานวิชาการ โปรดอ้างอิงโปรเจกต์ตามข้อมูลใน [CITATION.cff](CITATION.cff)
 
-## ค้นพบโปรเจกต์นี้ / Discoverability
+## ค้นหาโปรเจกต์นี้
 
 คำค้นที่เกี่ยวข้อง: **Thai academic writing, Claude Skills, Thai research project, APA 7 Thai, official correspondence, Thai Word typography, โครงงานวิจัย, หนังสือราชการ, บทที่ 1–3, รายการอ้างอิง**
 
@@ -155,9 +154,9 @@ cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
 
 ---
 
-## การติดตั้ง / Installation
+## การติดตั้ง
 
-### ข้อกำหนดเบื้องต้น / Prerequisites
+### ข้อกำหนดเบื้องต้น
 
 - [Claude Code](https://claude.ai/code) หรือ Claude Desktop App ติดตั้งและล็อกอินแล้ว
 - Git 2.x+ (`git --version` เพื่อตรวจสอบ)

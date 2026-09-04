@@ -35,7 +35,7 @@ A collection of Claude Skills for Thai academic writing, official correspondence
 
 **ไทย:** เขียนบทที่ 1 ของโครงงานวิจัยภาษาไทยระดับมัธยมปลายถึงอุดมศึกษา ครอบคลุมที่มาและความสำคัญของปัญหา วัตถุประสงค์ สมมติฐาน ขอบเขต นิยามศัพท์ และประโยชน์ที่คาดว่าจะได้รับ โดยใช้ภาษาวิชาการไทยที่ถูกต้องตามรูปแบบของสถาบัน
 
-**EN:** Writes Chapter 1 of Thai research projects (high school to university level), covering background and significance, objectives, hypotheses, scope, term definitions, and expected benefits. Uses formal Thai academic language following the institution's required format. Contains reference materials for Thai academic conventions (ที่มาความสำคัญ, วัตถุประสงค์, สมมติฐาน, ขอบเขต, นิยามศัพท์, ประโยชน์).
+**EN:** Writes Chapter 1 of Thai research projects (high school to university level), covering background and significance, objectives, hypotheses, scope, term definitions, and expected benefits. Uses formal Thai academic language following the institution's required format.
 
 ---
 
@@ -43,7 +43,7 @@ A collection of Claude Skills for Thai academic writing, official correspondence
 
 **ไทย:** เขียนบทที่ 2 ของโครงงานวิจัยภาษาไทย (เอกสารและงานวิจัยที่เกี่ยวข้อง) โดยค้นหาแหล่งอ้างอิงที่เชื่อถือได้ สังเคราะห์กรอบแนวคิด และอ้างอิงแบบ APA ภาษาไทย ใช้ได้กับโครงงานทุกสาขา
 
-**EN:** Writes Chapter 2 of Thai research projects (related documents and research). Searches for credible sources, synthesizes a conceptual framework, and cites in Thai APA style. Works across all subject areas. Includes reference materials for structure by project type, search and source validation, citation style, synthesis and framework, and content ownership and quality. Also includes an OpenAI agents config.
+**EN:** Writes Chapter 2 of Thai research projects (related documents and research). Searches for credible sources, synthesizes a conceptual framework, and cites in Thai APA style. Works across all subject areas.
 
 ---
 
@@ -63,33 +63,100 @@ A collection of Claude Skills for Thai academic writing, official correspondence
 
 ---
 
+## ความเข้ากันได้ / Compatibility
+
+ทุกสกิลเป็นไฟล์ Markdown ตามมาตรฐาน Claude Skill (`SKILL.md` ± `reference/` ± `agents/`) ใช้ได้กับทุก platform ที่รองรับรูปแบบนี้
+
+| Platform | รองรับ | หมายเหตุ |
+|---|---|---|
+| **Claude Code** (CLI) | ✅ | macOS · Linux · Windows (WSL2) |
+| **Claude Desktop App** (Code tab) | ✅ | macOS · Windows |
+| **Claude Cowork** | ✅ | วางในโฟลเดอร์ skills ของ workspace |
+| AI agent อื่นที่อ่าน SKILL.md | ✅ | ขึ้นกับ agent นั้น ๆ |
+
+**Claude model:** ทุก version ที่รองรับ Claude Skills (Haiku, Sonnet, Opus) — สกิลที่ใช้ WebSearch (`chapter2`, `references`) แนะนำ Sonnet ขึ้นไป
+
+**ระบบปฏิบัติการ:** macOS 12+, Ubuntu 20.04+, Debian 11+, Windows 10/11 (via WSL2)
+
+---
+
 ## การติดตั้ง / Installation
 
-**ไทย:** คัดลอกโฟลเดอร์สกิลที่ต้องการไปไว้ใน `~/.claude/skills/` แล้วเริ่ม Claude ใหม่
+### ข้อกำหนดเบื้องต้น / Prerequisites
 
-**EN:** Copy the skill folder(s) you want into `~/.claude/skills/`, then restart Claude.
+- [Claude Code](https://claude.ai/code) หรือ Claude Desktop App ติดตั้งและล็อกอินแล้ว
+- Git 2.x+ (`git --version` เพื่อตรวจสอบ)
+
+---
+
+### วิธีที่ 1 — ติดตั้งแบบ Global *(แนะนำ)*
+
+ใช้ได้กับทุก project บนเครื่อง สกิลพร้อมใช้งานทันทีในทุก session
 
 ```bash
+# 1. Clone repo รวม
 git clone https://github.com/sriwitsumo/project-skill.git
 cd project-skill
 
+# 2. สร้างโฟลเดอร์ skills (ถ้ายังไม่มี)
 mkdir -p ~/.claude/skills
 
-# ติดตั้งสกิลที่ต้องการ / install whichever skills you need:
+# 3. ติดตั้งสกิลที่ต้องการ (หรือติดตั้งทั้งหมดพร้อมกัน)
 cp -R thai-official-academic-writing ~/.claude/skills/
 cp -R thai-project-references        ~/.claude/skills/
 cp -R thai-word-line-fit             ~/.claude/skills/
-cp -R thai-project-chapter1         ~/.claude/skills/
-cp -R thai-project-chapter2         ~/.claude/skills/
-cp -R thai-project-chapter3         ~/.claude/skills/
-cp -R thai-project-intake           ~/.claude/skills/
-```
+cp -R thai-project-intake            ~/.claude/skills/
+cp -R thai-project-chapter1          ~/.claude/skills/
+cp -R thai-project-chapter2          ~/.claude/skills/
+cp -R thai-project-chapter3          ~/.claude/skills/
 
-ตรวจสอบว่าติดตั้งแล้ว / Verify:
-
-```bash
+# 4. ตรวจสอบ
 ls ~/.claude/skills/
 ```
+
+---
+
+### วิธีที่ 2 — ติดตั้งแบบ Project-local
+
+ใช้เฉพาะใน project ที่ต้องการ ไม่กระทบ project อื่น
+
+```bash
+# ภายในโฟลเดอร์ project ของคุณ
+mkdir -p .claude/skills
+cp -R thai-project-chapter1 .claude/skills/
+# เพิ่มสกิลอื่น ๆ ได้ตามต้องการ
+```
+
+---
+
+### Claude Cowork
+
+วางโฟลเดอร์สกิลที่ต้องการไว้ใน skills directory ของ Cowork workspace แล้ว reload workspace
+
+---
+
+### ตรวจสอบว่าสกิลทำงาน / Verify
+
+เปิด Claude แล้วลองพูดถึงงานที่สกิลนั้นครอบคลุม เช่น:
+
+> "ช่วยเขียนบทที่ 1 โครงงานให้หน่อย"
+
+ถ้าสกิลทำงาน: Claude จะถามข้อมูลโครงงานก่อน แทนที่จะตอบแบบทั่วไปทันที
+
+---
+
+### อัปเดตสกิล / Update
+
+```bash
+cd project-skill
+git pull
+cp -R thai-project-chapter1 ~/.claude/skills/
+# ทำซ้ำสำหรับสกิลอื่น ๆ ที่ติดตั้งไว้
+```
+
+---
+
+### การเรียกใช้งาน / Invocation
 
 **ไทย:** สกิลจะทำงานอัตโนมัติเมื่อ Claude เห็นว่าคำขอของคุณตรงกับคำอธิบายของสกิลนั้น ไม่ต้องเรียกด้วยชื่อ (แต่จะเรียกชื่อตรง ๆ ก็ได้)
 
@@ -109,6 +176,8 @@ project-skill/
 │   └── SKILL.md
 ├── thai-word-line-fit/
 │   └── SKILL.md
+├── thai-project-intake/
+│   └── SKILL.md
 ├── thai-project-chapter1/
 │   ├── SKILL.md
 │   ├── README.md
@@ -124,6 +193,7 @@ project-skill/
 │       └── 09-tuapae.md
 ├── thai-project-chapter2/
 │   ├── SKILL.md
+│   ├── README.md
 │   ├── agents/
 │   │   └── openai.yaml
 │   └── reference/
@@ -133,7 +203,13 @@ project-skill/
 │       ├── 04-synthesis-and-framework.md
 │       └── 05-content-ownership-and-quality.md
 ├── thai-project-chapter3/
-│   └── SKILL.md
+│   ├── SKILL.md
+│   └── README.md
 └── thai-project-intake/
-    └── SKILL.md
+    ├── SKILL.md
+    └── README.md
 ```
+
+---
+
+GitHub: [sriwitsumo](https://github.com/sriwitsumo)

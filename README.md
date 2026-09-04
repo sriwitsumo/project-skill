@@ -1,7 +1,30 @@
 # project-skill
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
+[![GitHub issues](https://img.shields.io/github/issues/sriwitsumo/project-skill)](https://github.com/sriwitsumo/project-skill/issues)
+
+> Thai-first Claude Skills for academic writing, research projects, official correspondence, and Word document typography.
+
 ชุด Claude Skills สำหรับงานเขียนภาษาไทยเชิงวิชาการ งานเอกสารราชการ และโครงงานวิจัย  
 A collection of Claude Skills for Thai academic writing, official correspondence, research projects, and Word document typography.
+
+## จุดเด่น / Why project-skill
+
+- **Thai-first:** ออกแบบสำหรับรูปแบบภาษาไทย งานวิชาการ และบริบทการศึกษาไทย
+- **Practical:** ใช้ได้ตั้งแต่รวบรวมโจทย์โครงงาน ไปจนถึงบทที่ 1–3 และรายการอ้างอิง
+- **Responsible by default:** เน้นการตรวจสอบแหล่งข้อมูล ความถูกต้อง และความเป็นเจ้าของงาน
+- **Open to improve:** รับข้อเสนอ แก้ไข และสกิลใหม่จากชุมชน
+
+## เริ่มต้นใน 2 นาที / Quick start
+
+```bash
+git clone https://github.com/sriwitsumo/project-skill.git
+mkdir -p ~/.claude/skills
+cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
+```
+
+จากนั้นเปิด Claude Code แล้วลอง: `ช่วยเขียนบทที่ 1 โครงงานให้หน่อย`
 
 ---
 
@@ -92,6 +115,20 @@ A collection of Claude Skills for Thai academic writing, official correspondence
 - **อ่านทบทวนทุกประโยค** ก่อนใช้งาน แก้ไขส่วนที่ผิดหรือไม่ตรงกับโครงงาน/งานของคุณ
 - **เขียนใหม่ด้วยสำนวนของตัวเอง** — งานวิชาการควรสะท้อนความเข้าใจและเสียงของผู้เขียน ไม่ใช่ AI
 - ตรวจสอบว่าเนื้อหาตรงตาม **รูปแบบและข้อกำหนดของสถาบัน/อาจารย์** ของคุณ
+
+---
+
+## ร่วมพัฒนา / Contributing
+
+ยินดีต้อนรับทุก contribution — ตั้งแต่การแก้คำอธิบาย เพิ่มตัวอย่าง ไปจนถึงสกิลใหม่ โปรดอ่าน [CONTRIBUTING.md](CONTRIBUTING.md) ก่อนเปิด pull request และใช้ [Issues](https://github.com/sriwitsumo/project-skill/issues) สำหรับ bug/feature requests หรือ [Discussions](https://github.com/sriwitsumo/project-skill/discussions) สำหรับคำถามและไอเดีย
+
+## License
+
+เผยแพร่ภายใต้ [MIT License](LICENSE) © 2026 Sriwit Rujirawatanakul
+
+## Citation
+
+หากนำไปใช้ในผลงานวิชาการ โปรดอ้างอิงโปรเจกต์ตามข้อมูลใน [CITATION.cff](CITATION.cff)
 
 ---
 

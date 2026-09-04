@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a reproducible problem with a skill
+title: "bug: "
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for helping improve project-skill. Please remove personal or confidential information from prompts and outputs."
+  - type: input
+    id: skill
+    attributes:
+      label: Skill
+      description: Which skill is affected?
+      placeholder: thai-project-chapter1
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Sanitized prompt
+      description: A minimal prompt that reproduces the issue (no personal data).
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true

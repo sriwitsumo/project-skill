@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thai Project Chapter 2"
+  short_description: "ช่วยเขียนและตรวจบทที่ 2 ของโครงงาน/งานวิจัยไทย"
+  default_prompt: "ช่วยเขียนบทที่ 2 โดยค้นและตรวจสอบแหล่งอ้างอิงจริงก่อนเขียน"

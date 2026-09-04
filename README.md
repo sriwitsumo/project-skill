@@ -26,6 +26,20 @@ cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
 
 จากนั้นเปิด Claude Code แล้วลอง: `ช่วยเขียนบทที่ 1 โครงงานให้หน่อย`
 
+![ติดตั้ง project-skill ใน 3 ขั้นตอน](assets/install-claude-code.svg)
+
+## เหมาะกับใคร / Use cases
+
+| คุณต้องการ… | เริ่มที่สกิล |
+| --- | --- |
+| รวบรวมข้อมูลก่อนเขียนโครงงาน | `thai-project-intake` |
+| เขียนบทที่ 1: ที่มา วัตถุประสงค์ สมมติฐาน และขอบเขต | `thai-project-chapter1` |
+| สังเคราะห์เอกสารและงานวิจัยที่เกี่ยวข้อง | `thai-project-chapter2` |
+| วางวิธีดำเนินการวิจัย | `thai-project-chapter3` |
+| จัดรายการอ้างอิงแบบ APA ภาษาไทย | `thai-project-references` |
+| ร่างหนังสือราชการหรือปรับภาษาเชิงวิชาการ | `thai-official-academic-writing` |
+| จัดบรรทัดเอกสาร Word ภาษาไทย | `thai-word-line-fit` |
+
 ---
 
 ## สกิลในรีโปนี้ / Skills in this repo
@@ -129,6 +143,12 @@ cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
 ## Citation
 
 หากนำไปใช้ในผลงานวิชาการ โปรดอ้างอิงโปรเจกต์ตามข้อมูลใน [CITATION.cff](CITATION.cff)
+
+## ค้นพบโปรเจกต์นี้ / Discoverability
+
+คำค้นที่เกี่ยวข้อง: **Thai academic writing, Claude Skills, Thai research project, APA 7 Thai, official correspondence, Thai Word typography, โครงงานวิจัย, หนังสือราชการ, บทที่ 1–3, รายการอ้างอิง**
+
+หากชุดสกิลนี้มีประโยชน์ ช่วยกด Star, แชร์ตัวอย่างการใช้งานที่ตรวจสอบแล้ว หรือเสนอไอเดียใน [Discussions](https://github.com/sriwitsumo/project-skill/discussions) — สิ่งเหล่านี้ช่วยให้ผู้เรียนและผู้สอนภาษาไทยค้นพบโปรเจกต์ได้มากขึ้น
 
 ---
 

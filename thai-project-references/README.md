@@ -17,16 +17,29 @@
 
 สกิลนี้เป็นไฟล์ Markdown ตามมาตรฐาน Claude Skill (`SKILL.md`) รองรับทุก platform ที่อ่านรูปแบบนี้ได้
 
-| Platform | รองรับ | หมายเหตุ |
+| Platform | รองรับ SKILL.md | หมายเหตุ |
 |---|---|---|
 | **Claude Code** (CLI) | ✅ | macOS · Linux · Windows (WSL2) |
 | **Claude Desktop App** (Code tab) | ✅ | macOS · Windows |
 | **Claude Cowork** | ✅ | วางในโฟลเดอร์ skills ของ workspace |
-| AI agent อื่นที่อ่าน SKILL.md | ✅ | ขึ้นกับ agent นั้น ๆ |
+| Claude mobile (iOS/Android) | ❌ | chat interface เท่านั้น ไม่มีระบบ skill |
+| ChatGPT / GPT-4o (OpenAI) | ❌ | ใช้รูปแบบ Custom GPT ของตัวเอง |
+| Gemini (Google) | ❌ | ใช้รูปแบบ Gem ของตัวเอง |
+| Microsoft Copilot | ❌ | ไม่รองรับ SKILL.md |
+| Perplexity / อื่น ๆ | ❌ | ไม่รองรับ SKILL.md |
 
 **Claude model:** ทุก version ที่รองรับ Claude Skills (Haiku, Sonnet, Opus) — สกิลนี้ใช้ WebSearch เพื่อยืนยันข้อมูลแหล่งอ้างอิง จึงแนะนำ Sonnet ขึ้นไป
 
 **ระบบปฏิบัติการ:** macOS 12+, Ubuntu 20.04+, Debian 11+, Windows 10/11 (via WSL2)
+
+## ⚠️ ข้อควรระวัง
+
+> ผลลัพธ์ที่ได้จากสกิลนี้เป็น **ตัวอย่างและจุดเริ่มต้นเท่านั้น**
+
+- **ไม่ควรนำส่งตรง ๆ** โดยไม่อ่านและแก้ไขก่อน — รายการอ้างอิงที่ AI สร้างอาจมีรูปแบบผิด ข้อมูลไม่ครบ หรือแหล่งที่ไม่มีอยู่จริง
+- **ตรวจสอบทุกรายการ** กับแหล่งต้นฉบับจริงก่อนส่ง
+- **เขียน/แก้ไขด้วยตัวเอง** — ผู้เขียนมีหน้าที่รับผิดชอบต่อความถูกต้องของรายการอ้างอิงทั้งหมด
+- ตรวจสอบว่ารูปแบบตรงตาม **ข้อกำหนดของสถาบัน/อาจารย์** ของคุณ
 
 ## วิธีติดตั้ง
 

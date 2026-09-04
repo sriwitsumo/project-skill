@@ -16,18 +16,30 @@
 
 สกิลนี้เป็นไฟล์ Markdown ตามมาตรฐาน Claude Skill (`SKILL.md`) รองรับทุก platform ที่อ่านรูปแบบนี้ได้
 
-| Platform | รองรับ | หมายเหตุ |
+| Platform | รองรับ SKILL.md | หมายเหตุ |
 |---|---|---|
 | **Claude Code** (CLI) | ✅ | macOS · Linux · Windows (WSL2) |
 | **Claude Desktop App** (Code tab) | ✅ | macOS · Windows |
 | **Claude Cowork** | ✅ | วางในโฟลเดอร์ skills ของ workspace |
-| AI agent อื่นที่อ่าน SKILL.md | ✅ | ขึ้นกับ agent นั้น ๆ |
+| Claude mobile (iOS/Android) | ❌ | chat interface เท่านั้น ไม่มีระบบ skill |
+| ChatGPT / GPT-4o (OpenAI) | ❌ | ใช้รูปแบบ Custom GPT ของตัวเอง |
+| Gemini (Google) | ❌ | ใช้รูปแบบ Gem ของตัวเอง |
+| Microsoft Copilot | ❌ | ไม่รองรับ SKILL.md |
+| Perplexity / อื่น ๆ | ❌ | ไม่รองรับ SKILL.md |
 
 **Claude model:** ทุก version ที่รองรับ Claude Skills (Haiku, Sonnet, Opus)
 
 **ระบบปฏิบัติการ:** macOS 12+, Ubuntu 20.04+, Debian 11+, Windows 10/11 (via WSL2)
 
 **Microsoft Word:** ทดสอบกับ Word for Mac 16.112 (Microsoft 365) — version อื่นอาจมีตำแหน่งเมนูต่างกัน แต่ผลลัพธ์ที่มองเห็นเป็นเกณฑ์หลัก
+
+## ⚠️ ข้อควรระวัง
+
+> คำแนะนำที่ได้จากสกิลนี้เป็น **ตัวอย่างและแนวทางเท่านั้น**
+
+- **ไม่ควรนำไปปฏิบัติตามทันที** โดยไม่ตรวจสอบกับเอกสารจริงของคุณก่อน — ผลลัพธ์อาจต่างกันตาม version ของ Word และ OS
+- **ทดสอบกับสำเนาก่อน** ไม่ใช่ไฟล์ต้นฉบับ เผื่อกรณีที่ผลลัพธ์ไม่เป็นไปตามที่คาดหวัง
+- **ตรวจสอบด้วยตาตัวเอง** ว่าเอกสารดูถูกต้องและสวยงามหลังจากใช้คำแนะนำ
 
 ## วิธีติดตั้ง
 

@@ -12,18 +12,85 @@
 - ต้องการ **in-text citation, reference list, หรือการอ้างอิง APA 7** แบบไทย
 - มีเอกสารภาษาไทยที่ต้องการ **จัดรูปแบบ/เลย์เอาต์** ให้พร้อมส่งหรือพิมพ์
 
+## ความเข้ากันได้
+
+สกิลนี้เป็นไฟล์ Markdown ตามมาตรฐาน Claude Skill (`SKILL.md`) รองรับทุก platform ที่อ่านรูปแบบนี้ได้
+
+| Platform | รองรับ | หมายเหตุ |
+|---|---|---|
+| **Claude Code** (CLI) | ✅ | macOS · Linux · Windows (WSL2) |
+| **Claude Desktop App** (Code tab) | ✅ | macOS · Windows |
+| **Claude Cowork** | ✅ | วางในโฟลเดอร์ skills ของ workspace |
+| AI agent อื่นที่อ่าน SKILL.md | ✅ | ขึ้นกับ agent นั้น ๆ |
+
+**Claude model:** ทุก version ที่รองรับ Claude Skills (Haiku, Sonnet, Opus) — งานที่ซับซ้อน (วิทยานิพนธ์ หนังสือราชการยาว) แนะนำ Sonnet ขึ้นไป
+
+**ระบบปฏิบัติการ:** macOS 12+, Ubuntu 20.04+, Debian 11+, Windows 10/11 (via WSL2)
+
 ## วิธีติดตั้ง
 
-สกิลนี้เป็นไฟล์ Markdown ตามมาตรฐาน Claude Skill (`SKILL.md`) ใช้ได้กับทั้ง
-Claude Code, Claude Cowork หรือเครื่องมือ AI agent อื่นที่รองรับรูปแบบ skill เดียวกัน
+สกิลนี้ไม่มี repo แยกเป็นของตัวเอง — ติดตั้งผ่าน repo รวม [`project-skill`](https://github.com/sriwitsumo/project-skill)
 
-1. ดาวน์โหลด/clone repo [`project-skill`](https://github.com/sriwitsumo/project-skill) (repo รวมทุกสกิล)
-2. คัดลอกโฟลเดอร์ `thai-official-academic-writing/` ไปไว้ในตำแหน่งที่เครื่องมือ AI agent ของคุณอ่าน skill (เช่น `~/.claude/skills/`)
-3. เรียกใช้งานโดยพูดถึงหัวข้อที่เกี่ยวข้อง ระบบจะเลือกสกิลนี้ให้อัตโนมัติ
+### ข้อกำหนดเบื้องต้น
+
+- [Claude Code](https://claude.ai/code) หรือ Claude Desktop App ติดตั้งและล็อกอินแล้ว
+- Git 2.x+ (`git --version` เพื่อตรวจสอบ)
+
+---
+
+### วิธีที่ 1 — ติดตั้งแบบ Global *(แนะนำ)*
+
+ใช้ได้กับทุก project บนเครื่อง สกิลพร้อมใช้งานทันทีในทุก session
 
 ```bash
+# 1. Clone repo รวม
 git clone https://github.com/sriwitsumo/project-skill.git
+
+# 2. สร้างโฟลเดอร์ skills (ถ้ายังไม่มี)
+mkdir -p ~/.claude/skills
+
+# 3. คัดลอกสกิล
 cp -R project-skill/thai-official-academic-writing ~/.claude/skills/
+
+# 4. ตรวจสอบ
+ls ~/.claude/skills/
+# ควรเห็น: thai-official-academic-writing/
+```
+
+---
+
+### วิธีที่ 2 — ติดตั้งแบบ Project-local
+
+```bash
+# ภายในโฟลเดอร์ project ของคุณ
+mkdir -p .claude/skills
+cp -R project-skill/thai-official-academic-writing .claude/skills/
+```
+
+---
+
+### Claude Cowork
+
+วางโฟลเดอร์ `thai-official-academic-writing/` ไว้ใน skills directory ของ Cowork workspace แล้ว reload workspace
+
+---
+
+### ตรวจสอบว่าสกิลทำงาน
+
+เปิด Claude แล้วลองพูดว่า:
+
+> "ช่วยร่างหนังสือราชการภายนอกให้หน่อย" หรือ "ช่วยตรวจภาษาวิชาการของ thesis ให้หน่อย"
+
+ถ้าสกิลทำงาน: Claude จะถามประเภทเอกสาร วัตถุประสงค์ และข้อมูลที่จำเป็น ก่อนร่างหรือตรวจ — ไม่ตอบแบบทั่วไปทันที
+
+---
+
+### อัปเดตสกิล
+
+```bash
+cd project-skill
+git pull
+cp -R thai-official-academic-writing ~/.claude/skills/
 ```
 
 ## โครงสร้างไฟล์

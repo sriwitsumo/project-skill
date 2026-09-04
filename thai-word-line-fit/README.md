@@ -12,18 +12,88 @@
 - ต้องการแก้เอกสาร **งานรายงาน โครงงาน หรือเอกสารวิชาการ** ให้บรรทัดพอดีสวยงาม
 - ช่องว่างระหว่างคำถูก **ยืดผิดปกติ** เพราะ Justify/Thai Distributed
 
+## ความเข้ากันได้
+
+สกิลนี้เป็นไฟล์ Markdown ตามมาตรฐาน Claude Skill (`SKILL.md`) รองรับทุก platform ที่อ่านรูปแบบนี้ได้
+
+| Platform | รองรับ | หมายเหตุ |
+|---|---|---|
+| **Claude Code** (CLI) | ✅ | macOS · Linux · Windows (WSL2) |
+| **Claude Desktop App** (Code tab) | ✅ | macOS · Windows |
+| **Claude Cowork** | ✅ | วางในโฟลเดอร์ skills ของ workspace |
+| AI agent อื่นที่อ่าน SKILL.md | ✅ | ขึ้นกับ agent นั้น ๆ |
+
+**Claude model:** ทุก version ที่รองรับ Claude Skills (Haiku, Sonnet, Opus)
+
+**ระบบปฏิบัติการ:** macOS 12+, Ubuntu 20.04+, Debian 11+, Windows 10/11 (via WSL2)
+
+**Microsoft Word:** ทดสอบกับ Word for Mac 16.112 (Microsoft 365) — version อื่นอาจมีตำแหน่งเมนูต่างกัน แต่ผลลัพธ์ที่มองเห็นเป็นเกณฑ์หลัก
+
 ## วิธีติดตั้ง
 
-สกิลนี้เป็นไฟล์ Markdown ตามมาตรฐาน Claude Skill (`SKILL.md`) ใช้ได้กับทั้ง
-Claude Code, Claude Cowork หรือเครื่องมือ AI agent อื่นที่รองรับรูปแบบ skill เดียวกัน
+สกิลนี้ไม่มี repo แยกเป็นของตัวเอง — ติดตั้งผ่าน repo รวม [`project-skill`](https://github.com/sriwitsumo/project-skill)
 
-1. ดาวน์โหลด/clone repo [`project-skill`](https://github.com/sriwitsumo/project-skill) (repo รวมทุกสกิล)
-2. คัดลอกโฟลเดอร์ `thai-word-line-fit/` ไปไว้ในตำแหน่งที่เครื่องมือ AI agent ของคุณอ่าน skill (เช่น `~/.claude/skills/`)
-3. เรียกใช้งานโดยพูดถึงหัวข้อที่เกี่ยวข้อง ระบบจะเลือกสกิลนี้ให้อัตโนมัติ
+### ข้อกำหนดเบื้องต้น
+
+- [Claude Code](https://claude.ai/code) หรือ Claude Desktop App ติดตั้งและล็อกอินแล้ว
+- Git 2.x+ (`git --version` เพื่อตรวจสอบ)
+- Microsoft Word (ทุก version ที่รองรับ TH Sarabun New)
+
+---
+
+### วิธีที่ 1 — ติดตั้งแบบ Global *(แนะนำ)*
+
+ใช้ได้กับทุก project บนเครื่อง สกิลพร้อมใช้งานทันทีในทุก session
 
 ```bash
+# 1. Clone repo รวม
 git clone https://github.com/sriwitsumo/project-skill.git
+
+# 2. สร้างโฟลเดอร์ skills (ถ้ายังไม่มี)
+mkdir -p ~/.claude/skills
+
+# 3. คัดลอกสกิล
 cp -R project-skill/thai-word-line-fit ~/.claude/skills/
+
+# 4. ตรวจสอบ
+ls ~/.claude/skills/
+# ควรเห็น: thai-word-line-fit/
+```
+
+---
+
+### วิธีที่ 2 — ติดตั้งแบบ Project-local
+
+```bash
+# ภายในโฟลเดอร์ project ของคุณ
+mkdir -p .claude/skills
+cp -R project-skill/thai-word-line-fit .claude/skills/
+```
+
+---
+
+### Claude Cowork
+
+วางโฟลเดอร์ `thai-word-line-fit/` ไว้ใน skills directory ของ Cowork workspace แล้ว reload workspace
+
+---
+
+### ตรวจสอบว่าสกิลทำงาน
+
+เปิด Claude แล้วลองพูดว่า:
+
+> "เอกสาร Word ภาษาไทยของฉันข้อความตกคำ ช่วยจัดให้หน่อย"
+
+ถ้าสกิลทำงาน: Claude จะถามรายละเอียดเอกสาร (font, margin, ปัญหาที่เจอ) และให้คำแนะนำแบบ step-by-step ตามหลักการของสกิล แทนที่จะตอบทั่วไป
+
+---
+
+### อัปเดตสกิล
+
+```bash
+cd project-skill
+git pull
+cp -R thai-word-line-fit ~/.claude/skills/
 ```
 
 ## โครงสร้างไฟล์

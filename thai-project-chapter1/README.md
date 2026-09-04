@@ -13,18 +13,103 @@
 - ขอให้ **"เขียนโครงงานให้หน่อย"**, **"ตรวจภาษาโครงงาน"**, หรือ **"แก้บทนำให้เป็นทางการขึ้น"**
 - แม้ผู้ใช้จะไม่ได้พูดคำว่า "บทที่ 1" ตรง ๆ แต่บริบทชัดว่าต้องการเนื้อหาส่วนนำของโครงงาน
 
+## ความเข้ากันได้
+
+สกิลนี้เป็นไฟล์ Markdown ตามมาตรฐาน Claude Skill (`SKILL.md` + โฟลเดอร์ `reference/`) รองรับทุก platform ที่อ่านรูปแบบนี้ได้
+
+| Platform | รองรับ | หมายเหตุ |
+|---|---|---|
+| **Claude Code** (CLI) | ✅ | macOS · Linux · Windows (WSL2) |
+| **Claude Desktop App** (Code tab) | ✅ | macOS · Windows |
+| **Claude Cowork** | ✅ | วางในโฟลเดอร์ skills ของ workspace |
+| AI agent อื่นที่อ่าน SKILL.md | ✅ | ขึ้นกับ agent นั้น ๆ |
+
+**Claude model:** ทุก version ที่รองรับ Claude Skills (Haiku, Sonnet, Opus)
+
+**ระบบปฏิบัติการ:** macOS 12+, Ubuntu 20.04+, Debian 11+, Windows 10/11 (via WSL2)
+
 ## วิธีติดตั้ง
 
-สกิลนี้เป็นไฟล์ Markdown ตามมาตรฐาน Claude Skill (`SKILL.md` + โฟลเดอร์ `reference/`) ใช้ได้กับทั้ง
-Claude Code, Claude Cowork หรือเครื่องมือ AI agent อื่นที่รองรับรูปแบบ skill เดียวกัน
+### ข้อกำหนดเบื้องต้น
 
-1. ดาวน์โหลด/clone repo นี้
-2. คัดลอกทั้งโฟลเดอร์ `thai-project-chapter1/` ไปไว้ในตำแหน่งที่เครื่องมือ AI agent ของคุณอ่าน skill (เช่น `~/.claude/skills/`)
-3. เรียกใช้งานโดยพูดถึงหัวข้อที่เกี่ยวข้อง ระบบจะเลือกสกิลนี้ให้อัตโนมัติ
+- [Claude Code](https://claude.ai/code) หรือ Claude Desktop App ติดตั้งและล็อกอินแล้ว
+- Git 2.x+ (`git --version` เพื่อตรวจสอบ)
+
+---
+
+### วิธีที่ 1 — ติดตั้งแบบ Global *(แนะนำ)*
+
+ใช้ได้กับทุก project บนเครื่อง สกิลพร้อมใช้งานทันทีในทุก session
 
 ```bash
+# 1. Clone repo
 git clone https://github.com/sriwitsumo/thai-project-chapter1.git
+
+# 2. สร้างโฟลเดอร์ skills (ถ้ายังไม่มี)
+mkdir -p ~/.claude/skills
+
+# 3. คัดลอกสกิล
 cp -R thai-project-chapter1 ~/.claude/skills/
+
+# 4. ตรวจสอบ
+ls ~/.claude/skills/
+# ควรเห็น: thai-project-chapter1/
+```
+
+---
+
+### วิธีที่ 2 — ติดตั้งแบบ Project-local
+
+ใช้เฉพาะใน project ที่ต้องการ ไม่กระทบ project อื่น วาง `.claude/skills/` ไว้ใน root ของ project
+
+```bash
+# ภายในโฟลเดอร์ project ของคุณ
+mkdir -p .claude/skills
+cp -R thai-project-chapter1 .claude/skills/
+```
+
+---
+
+### วิธีที่ 3 — Clone จาก repo รวมทุกสกิล (`project-skill`)
+
+ถ้าต้องการใช้หลายสกิลในชุดนี้พร้อมกัน ติดตั้งทีเดียวจาก repo รวม
+
+```bash
+git clone https://github.com/sriwitsumo/project-skill.git
+mkdir -p ~/.claude/skills
+cp -R project-skill/thai-project-chapter1 ~/.claude/skills/
+
+# ติดตั้งสกิลอื่น ๆ ในชุดเดียวกันต่อได้เลย เช่น:
+cp -R project-skill/thai-project-intake     ~/.claude/skills/
+cp -R project-skill/thai-project-chapter2   ~/.claude/skills/
+cp -R project-skill/thai-project-chapter3   ~/.claude/skills/
+cp -R project-skill/thai-project-references ~/.claude/skills/
+```
+
+---
+
+### Claude Cowork
+
+วางโฟลเดอร์ `thai-project-chapter1/` ไว้ใน skills directory ของ Cowork workspace แล้ว reload workspace
+
+---
+
+### ตรวจสอบว่าสกิลทำงาน
+
+เปิด Claude แล้วลองพูดว่า:
+
+> "ช่วยเขียนบทที่ 1 โครงงานให้หน่อย"
+
+ถ้าสกิลทำงาน: Claude จะถามข้อมูลโครงงาน (หรือแนะนำให้ใช้ `thai-project-intake` ก่อน) แทนที่จะตอบแบบทั่วไป
+
+---
+
+### อัปเดตสกิล
+
+```bash
+cd thai-project-chapter1
+git pull
+cp -R . ~/.claude/skills/thai-project-chapter1/
 ```
 
 ## โครงสร้างไฟล์
@@ -46,7 +131,7 @@ thai-project-chapter1/
 
 ## เกี่ยวข้องกับสกิลอื่นในชุดเดียวกัน
 
-สกิลนี้เป็นส่วนหนึ่งของชุด `thai-project-*`:
+สกิลนี้เป็นส่วนหนึ่งของชุด `thai-project-*` ใน [project-skill](https://github.com/sriwitsumo/project-skill):
 
 - **`thai-project-intake`** — ใช้ก่อนสกิลนี้เมื่อเริ่มโครงงานใหม่ เพื่อรวบรวมข้อมูลโครงงานให้ครบในครั้งเดียว
 - **`thai-project-chapter2`** — ใช้ต่อเมื่อเขียนบทที่ 1 เสร็จแล้ว สำหรับเอกสารและงานวิจัยที่เกี่ยวข้อง

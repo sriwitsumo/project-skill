@@ -1,0 +1,33 @@
+name: Validate skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify skill structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          skill_count=0
+          for directory in thai-*/; do
+            test -d "$directory" || continue
+            test -f "${directory}SKILL.md"
+            skill_count=$((skill_count + 1))
+          done
+          test "$skill_count" -gt 0
+          test -f LICENSE
+          test -f CONTRIBUTING.md
+          test -f CODE_OF_CONDUCT.md
+          test -f SECURITY.md
+          test -f CITATION.cff
+          echo "Validated $skill_count skills and community files."

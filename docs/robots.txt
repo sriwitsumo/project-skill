@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sriwitsumo.github.io/project-skill/sitemap.xml

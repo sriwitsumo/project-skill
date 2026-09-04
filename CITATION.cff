@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use project-skill in your work, please cite it as below."
+title: "project-skill"
+abstract: "Claude Skills for Thai academic writing, official correspondence, research projects, and Thai Word typography."
+type: software
+authors:
+  - family-names: Rujirawatanakul
+    given-names: Sriwit
+repository-code: "https://github.com/sriwitsumo/project-skill"
+license: MIT
+date-released: 2026-09-04

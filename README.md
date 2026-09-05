@@ -20,23 +20,25 @@
 - **รับผิดชอบต่อผู้ใช้:** เน้นการตรวจสอบแหล่งข้อมูล ความถูกต้อง และความเป็นเจ้าของงาน
 - **พัฒนาร่วมกันได้:** เปิดรับข้อเสนอ การแก้ไข และสกิลใหม่จากชุมชน
 
-## ใช้ได้กับ Claude Free, ChatGPT Work และ Codex
+## ใช้ได้กับ Claude Free, Claude Code, ChatGPT Work และ Codex
 
 - **Claude Free / Pro / Max (chat, web, desktop, mobile):** อัปโหลดสกิลเป็น ZIP ที่ `Customize → Skills` หลังเปิด `Code execution and file creation`
+- **Claude Code:** เพิ่ม marketplace นี้ แล้วติดตั้ง plugin `project-skill` ด้วยสองคำสั่งด้านล่าง
 - **ChatGPT Work (รวมถึง ChatGPT chat ที่ติดตั้ง plugin):** รีโปนี้เป็น plugin ที่มี manifest และ 7 สกิลพร้อมติดตั้ง
-- **Claude Code / Codex:** ติดตั้งจากโฟลเดอร์ `skills/` บนเครื่องหรือในรีโปของคุณ
+- **Codex:** ติดตั้งจากโฟลเดอร์ `skills/` บนเครื่องหรือในรีโปของคุณ
 
 ดูคู่มือแยกตามแพลตฟอร์มที่ [เว็บไซต์คู่มือ](https://project-skill-site.vercel.app/installation.html)
 
-## เริ่มต้นใน 2 นาที — Claude Code
+## เริ่มต้นใน 30 วินาที — Claude Code
 
 ```bash
-git clone https://github.com/sriwitsumo/project-skill.git
-mkdir -p ~/.claude/skills
-cp -R project-skill/skills/thai-project-chapter1 ~/.claude/skills/
+claude plugin marketplace add sriwitsumo/project-skill
+claude plugin install project-skill@sriwit-thai-skills
 ```
 
-จากนั้นเปิด Claude Code แล้วลอง: `ช่วยเขียนบทที่ 1 โครงงานให้หน่อย`
+จากนั้นเปิด Claude Code แล้วลอง: `ช่วยเริ่มเก็บข้อมูลสำหรับโครงงานของฉัน`
+
+หากเคยเพิ่ม marketplace แล้ว ให้ข้ามบรรทัดแรกได้ และเมื่อมีเวอร์ชันใหม่ให้ใช้ `claude plugin marketplace update sriwit-thai-skills`
 
 <p align="center">
   <img src="assets/install-terminal.gif" alt="GIF แสดงคำสั่งติดตั้ง project-skill ผ่าน Terminal" width="760">
@@ -122,7 +124,8 @@ cp -R project-skill/skills/thai-project-chapter1 ~/.claude/skills/
 |---|---|---|
 | **Claude Free / Pro / Max** | ✅ | เปิด Code execution แล้วอัปโหลด ZIP ที่ `Customize → Skills` |
 | **Claude chat** (web, desktop, mobile) | ✅ | ใช้สกิลที่เปิดไว้ใน `Customize → Skills` |
-| **Claude Code / Cowork** | ✅ | ใช้โฟลเดอร์ใน `skills/` หรือ plugin นี้ |
+| **Claude Code** | ✅ | ติดตั้งผ่าน Claude Plugin Marketplace หรือใช้โฟลเดอร์ใน `skills/` |
+| **Claude Cowork** | ✅ | ใช้โฟลเดอร์ใน `skills/` ตาม workspace ที่เปิดใช้งาน |
 | **ChatGPT Work** | ✅ | ติดตั้ง plugin `project-skill` ซึ่งรวม 7 สกิล |
 | **ChatGPT chat** | ✅ | ใช้ plugin เดียวกันหลังติดตั้งใน ChatGPT |
 | Gemini / Copilot / Perplexity | ไม่ได้ทดสอบ | ไม่มีคู่มือติดตั้งสำหรับโปรเจกต์นี้ |
@@ -170,17 +173,34 @@ cp -R project-skill/skills/thai-project-chapter1 ~/.claude/skills/
 
 ### เลือกวิธีให้ตรงกับแอปที่ใช้
 
-1. **Claude Free / Pro / Max:** ไม่ต้องติดตั้ง Terminal — ดาวน์โหลดหรือ clone รีโป แล้ว ZIP โฟลเดอร์สกิลที่ต้องการเพื่ออัปโหลดใน Claude chat
-2. **ChatGPT Work / ChatGPT chat:** ใช้ plugin ในรีโปนี้ ซึ่งรวมสกิลทั้งหมดไว้ใต้ `skills/`
-3. **Claude Code / Codex:** ใช้คำสั่ง Terminal ด้านล่าง
+1. **Claude Code:** เพิ่ม Claude Plugin Marketplace แล้วติดตั้งทั้งชุดด้วย 2 คำสั่ง
+2. **Claude Free / Pro / Max:** ไม่ต้องติดตั้ง Terminal — ดาวน์โหลดหรือ clone รีโป แล้ว ZIP โฟลเดอร์สกิลที่ต้องการเพื่ออัปโหลดใน Claude chat
+3. **ChatGPT Work / ChatGPT chat:** ใช้ plugin ในรีโปนี้ ซึ่งรวมสกิลทั้งหมดไว้ใต้ `skills/`
+4. **Codex:** ใช้คำสั่ง Terminal ด้านล่าง
 
 > ใช้ใน Claude Free ได้: ไปที่ `Settings → Capabilities` เปิด **Code execution and file creation** จากนั้น `Customize → Skills → + Create skill → Upload a skill` แล้วเลือก ZIP ที่มีโฟลเดอร์สกิลและ `SKILL.md` อยู่ข้างใน
 
 ---
 
-### วิธีที่ 1 — ติดตั้งแบบ Global *(แนะนำ)*
+### วิธีที่ 0 — Claude Code Marketplace *(แนะนำสำหรับ Claude Code)*
 
-ใช้ได้กับทุก project บนเครื่อง สกิลพร้อมใช้งานทันทีในทุก session
+วิธีนี้ไม่ต้อง clone หรือคัดลอกโฟลเดอร์เอง และเป็นเส้นทางที่ทำให้ plugin นี้ปรากฏในหน้า Discover หลังเพิ่ม marketplace แล้ว
+
+```bash
+# เพิ่ม catalog ของ project-skill ครั้งเดียว
+claude plugin marketplace add sriwitsumo/project-skill
+
+# ติดตั้งทั้งชุด 7 skills
+claude plugin install project-skill@sriwit-thai-skills
+```
+
+ตรวจสอบด้วย `claude plugin list` แล้วเริ่ม task ใหม่ได้ทันที สกิลจะเรียกโดยอัตโนมัติเมื่อโจทย์ตรงกับคำอธิบาย หรือเรียกโดยตรงด้วยชื่อ `project-skill:thai-project-intake`
+
+---
+
+### วิธีที่ 1 — ติดตั้งแบบ Global
+
+ใช้ได้กับทุก project บนเครื่อง สกิลพร้อมใช้งานทันทีในทุก session หากไม่ต้องการใช้ Claude Plugin Marketplace
 
 ```bash
 # 1. Clone repo รวม
@@ -272,6 +292,9 @@ cp -R skills/thai-project-chapter1 ~/.claude/skills/
 project-skill/
 ├── README.md
 ├── .gitignore
+├── .claude-plugin/
+│   ├── marketplace.json
+│   └── plugin.json
 ├── .codex-plugin/
 │   └── plugin.json
 ├── skills/

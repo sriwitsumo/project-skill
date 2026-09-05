@@ -1,0 +1,29 @@
+{
+  "name": "project-skill",
+  "description": "7 Agent Skills ภาษาไทยสำหรับเก็บโจทย์โครงงาน เขียนบทที่ 1–3 จัด APA 7 หนังสือราชการ และเอกสาร Word",
+  "version": "1.0.0",
+  "author": {
+    "name": "Sriwit Rujirawatanakul"
+  },
+  "homepage": "https://project-skill-site.vercel.app/",
+  "repository": "https://github.com/sriwitsumo/project-skill",
+  "license": "MIT",
+  "keywords": [
+    "thai",
+    "thai-language",
+    "academic-writing",
+    "research-project",
+    "claude-skills",
+    "apa-7",
+    "word"
+  ],
+  "skills": [
+    "./skills/thai-project-intake",
+    "./skills/thai-project-chapter1",
+    "./skills/thai-project-chapter2",
+    "./skills/thai-project-chapter3",
+    "./skills/thai-project-references",
+    "./skills/thai-official-academic-writing",
+    "./skills/thai-word-line-fit"
+  ]
+}

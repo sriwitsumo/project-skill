@@ -1,0 +1,32 @@
+{
+  "name": "sriwit-thai-skills",
+  "owner": {
+    "name": "Sriwit Rujirawatanakul"
+  },
+  "metadata": {
+    "description": "Claude Code plugin marketplace for Thai academic projects, APA references, official documents, and Thai Word formatting.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "project-skill",
+      "source": "./",
+      "description": "7 Agent Skills ภาษาไทยสำหรับโครงงานวิจัย บทที่ 1–3 APA 7 หนังสือราชการ และ Word",
+      "version": "1.0.0",
+      "author": {
+        "name": "Sriwit Rujirawatanakul"
+      },
+      "homepage": "https://project-skill-site.vercel.app/",
+      "repository": "https://github.com/sriwitsumo/project-skill",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": [
+        "thai",
+        "academic-writing",
+        "research-project",
+        "claude-skills",
+        "apa-7"
+      ]
+    }
+  ]
+}

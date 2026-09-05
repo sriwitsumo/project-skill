@@ -163,7 +163,13 @@ claude plugin install project-skill@sriwit-thai-skills
 
 คำค้นที่เกี่ยวข้อง: **Thai academic writing, Claude Skills, Thai research project, APA 7 Thai, official correspondence, Thai Word typography, โครงงานวิจัย, หนังสือราชการ, บทที่ 1–3, รายการอ้างอิง**
 
-ถ้าชุดสกิลนี้ช่วยคุณได้ **ช่วยกด ⭐ Star ให้หน่อยนะครับ** — หนึ่งดาวของคุณช่วยให้ผู้เรียนและผู้สอนภาษาไทยค้นพบโปรเจกต์นี้มากขึ้นจริง ๆ
+> กว่าจะทำสกิลหนึ่งชุดให้ทุกคนหยิบไปใช้ได้ ต้องออกแบบขั้นตอน เขียนคู่มือ ทดสอบ และดูแลต่อเนื่อง
+
+## ถ้า project-skill ช่วยคุณได้ ฝากกด Star ให้หน่อยนะครับ
+
+[![กด Star เพื่อสนับสนุน project-skill](https://img.shields.io/badge/☆%20Star-project--skill-235b45?style=for-the-badge)](https://github.com/sriwitsumo/project-skill/stargazers)
+
+หนึ่งดาวของคุณช่วยให้ผู้เรียน ผู้สอน และคนไทยที่กำลังทำโครงงานเจอเครื่องมือนี้ง่ายขึ้นมาก ขอบคุณที่ช่วยให้งานโอเพนซอร์สภาษาไทยไปต่อได้ครับ
 
 คุณยังช่วยได้ด้วยการแชร์ตัวอย่างการใช้งานที่ตรวจสอบแล้ว หรือเสนอไอเดียใน [Discussions](https://github.com/sriwitsumo/project-skill/discussions)
 

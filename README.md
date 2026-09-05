@@ -1,4 +1,4 @@
-# project-skill
+# Claude Skill เขียนโครงงานภาษาไทย — project-skill
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
@@ -7,9 +7,11 @@
 
 > ชุด Agent Skills ภาษาไทยสำหรับ Claude, ChatGPT Work และ Codex — งานวิชาการ หนังสือราชการ และโครงงานวิจัย
 
+**Claude Skill เขียนโครงงานภาษาไทย** ชุดนี้ช่วยจัดกระบวนการตั้งแต่เก็บโจทย์ก่อนเขียน ร่างบทที่ 1–3 ตรวจรายการอ้างอิง APA ไปจนถึงจัดเอกสาร Word โดยแยกเป็น 7 สกิลที่เลือกใช้ตามขั้นตอนงานได้
+
 ออกแบบเพื่อผู้เรียน ผู้สอน และผู้ทำงานภาษาไทยโดยเฉพาะ — ตั้งแต่เก็บโจทย์โครงงาน เขียนบทที่ 1–3 จัดรายการอ้างอิง ไปจนถึงจัดบรรทัด Word ให้สวยและถูกต้อง
 
-คู่มือออนไลน์: [project-skill-site.vercel.app](https://project-skill-site.vercel.app/) · สำหรับผู้ดูแลเว็บไซต์: [project-skill-site (private)](https://github.com/sriwitsumo/project-skill-site)
+คู่มือออนไลน์: [Claude Skill เขียนโครงงานภาษาไทย](https://project-skill-site.vercel.app/claude-skill-thai-project.html) · [วิธีติดตั้ง](https://project-skill-site.vercel.app/installation.html) · สำหรับผู้ดูแลเว็บไซต์: [project-skill-site (private)](https://github.com/sriwitsumo/project-skill-site)
 
 ## จุดเด่น
 

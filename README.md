@@ -11,7 +11,7 @@
 
 ออกแบบเพื่อผู้เรียน ผู้สอน และผู้ทำงานภาษาไทยโดยเฉพาะ — ตั้งแต่เก็บโจทย์โครงงาน เขียนบทที่ 1–3 จัดรายการอ้างอิง ไปจนถึงจัดบรรทัด Word ให้สวยและถูกต้อง
 
-คู่มือออนไลน์: [Claude Skill เขียนโครงงานภาษาไทย](https://project-skill-site.vercel.app/claude-skill-thai-project.html) · [วิธีติดตั้ง](https://project-skill-site.vercel.app/installation.html) · สำหรับผู้ดูแลเว็บไซต์: [project-skill-site (private)](https://github.com/sriwitsumo/project-skill-site)
+เริ่มอ่าน: [คู่มือ Claude Skill เขียนโครงงานภาษาไทยใน GitHub](GUIDE_TH.md) · [คู่มือออนไลน์](https://project-skill-site.vercel.app/claude-skill-thai-project.html) · [วิธีติดตั้ง](https://project-skill-site.vercel.app/installation.html) · สำหรับผู้ดูแลเว็บไซต์: [project-skill-site (private)](https://github.com/sriwitsumo/project-skill-site)
 
 ## จุดเด่น
 
